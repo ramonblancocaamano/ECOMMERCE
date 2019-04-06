@@ -6,6 +6,7 @@ import cart.ShoppingCart;
 import entity.Product;
 import model.CategoryModel;
 import model.ProductModel;
+import web.ViewManager;
 
 
 
@@ -26,7 +27,8 @@ public class neworderAction extends Action {
         
         ShoppingCart shoppingCart;
         Product product;
-        int productId; 
+        int productId;
+        String catogoryId;
         
         req.setAttribute("categories", categoryModel.retrieveAll());
 
@@ -37,8 +39,11 @@ public class neworderAction extends Action {
         }
         
         productId = Integer.parseInt(req.getParameter("productid"));
-        // product =
-
+        product = productModel.retrieve(productId);
+        shoppingCart.addItem(product);
+        
+        catogoryId = (String)req.getSession().getAttribute("currentcatid");
+        ViewManager.nextView(req, resp, "category.do?categoryid=" + catogoryId);
     }
 
 }
