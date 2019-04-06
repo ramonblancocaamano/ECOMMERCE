@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model;
 
 import entity.Category;
@@ -12,8 +7,7 @@ import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
 /**
- *
- * @author juanluis
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
  */
 public class CategoryModel {
 

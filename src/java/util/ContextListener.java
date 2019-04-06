@@ -14,11 +14,8 @@ import model.ProductModel;
 
 
 /**
- *
- * @author  juanluis
- * @version
- *
- * Web application lifecycle listener.
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
+ * @About: Web application lifecycle listener. 
  */
 public class ContextListener implements ServletContextListener, HttpSessionListener {
 

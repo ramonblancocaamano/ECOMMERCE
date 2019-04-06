@@ -3,6 +3,9 @@ package web;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+/**
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
+ */
 public class ViewManager {
 
     public static void nextView(HttpServletRequest req, HttpServletResponse resp, String jsp) {

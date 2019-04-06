@@ -4,6 +4,9 @@ import javax.servlet.http.*;
 import model.CategoryModel;
 import web.ViewManager;
 
+/**
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
+ */
 public class initAction extends Action {
 
     CategoryModel categoryModel;

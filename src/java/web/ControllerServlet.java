@@ -9,6 +9,9 @@ import model.CategoryModel;
 import model.ProductModel;
 import web.action.*;
 
+/**
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
+ */
 public class ControllerServlet extends HttpServlet {
 
     private HashMap actionMap;

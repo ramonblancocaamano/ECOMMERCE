@@ -1,21 +1,30 @@
-/*
- * Copyright (c) 2010, Oracle and/or its affiliates. All rights reserved.
- *
- * You may not modify, use, reproduce, or distribute this software
- * except in compliance with the terms of the license at:
- * http://developer.sun.com/berkeley_license.html
- */
-
 package cart;
 
 import entity.Product;
+import java.util.*;
+import javax.persistence.EntityManager;
+import javax.transaction.UserTransaction;
 
 /**
- *
- * @author juanluis
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
  */
 public class ShoppingCartItem {
+    List<Product> products = new ArrayList();
 
+    public ShoppingCartItem(Product product) {
+        products.add(product);
+    }
+
+    public Product getProduct() {
+        return products.get(0);       
+    }
     
+    /*
+    public int getQuantity()
+
+    public void setQuantity(int quantity)
+
+    public double getTotal()
+     */
 
 }
