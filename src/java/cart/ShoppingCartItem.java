@@ -1,30 +1,37 @@
 package cart;
 
 import entity.Product;
-import java.util.*;
-import javax.persistence.EntityManager;
-import javax.transaction.UserTransaction;
 
 /**
  * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
  */
 public class ShoppingCartItem {
-    List<Product> products = new ArrayList();
+
+    Product product;
+    int quantity = 0;
 
     public ShoppingCartItem(Product product) {
-        products.add(product);
+        this.product = product;
+        quantity = 1;
     }
 
     public Product getProduct() {
-        return products.get(0);       
+        return product;
     }
-    
-    /*
-    public int getQuantity()
 
-    public void setQuantity(int quantity)
+    public int getQuantity() {
+        return quantity;
+    }
 
-    public double getTotal()
-     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getTotal() {
+        double price;
+
+        price = quantity * product.getPrice();
+        return price;
+    }
 
 }
