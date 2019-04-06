@@ -37,7 +37,7 @@ public class neworderAction extends Action {
         }
         
         productId = Integer.parseInt(req.getParameter("productid"));
-        
+        // product =
 
     }
 
