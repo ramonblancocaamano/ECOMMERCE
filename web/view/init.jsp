@@ -1,3 +1,4 @@
+<%@page import="cart.ShoppingCart"%>
 <%@ page import="entity.Category" %>
 <%@ page import="java.util.List" %>
 
@@ -16,6 +17,20 @@
         <h3> Our unique home delivery service brings you fresh organic produce,
         dairy, meats, breads and other delicious and healthy items direct
         to your doorstep. </h3>
+        
+        <%
+            int cartNumberOfItems = 0;
+            ShoppingCart shoppingCart;
+            shoppingCart = (ShoppingCart) request.getSession().getAttribute("cart");
+            if (shoppingCart != null) {
+                cartNumberOfItems = shoppingCart.getNumberOfItems();
+            }
+        %>   
+        <%if (cartNumberOfItems > 0) {%>
+        <img src="img/cart.gif"</img> <%= cartNumberOfItems%> items 
+        <a href="viewcart.do">View Cart</a>
+        <br><a href="checkout.do">Proceed to checkout</a>
+        <%}%>
 
 
     <table width="50%" border="1" bordercolordark="#000000" bordercolorlight="#FFFFFF" cellpadding="3" cellspacing="0">

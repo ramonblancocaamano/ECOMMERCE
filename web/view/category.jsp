@@ -40,6 +40,7 @@
         <img src="img/cart.gif"</img> <%= cartNumberOfItems%> items 
         <%if (cartNumberOfItems > 0) {%>
         <a href="viewcart.do">View Cart</a>
+        <br><a href="checkout.do">Proceed to checkout</a>
         <%}%>
         <table width="80%" border="1" bordercolordark="#000000" bordercolorlight="#FFFFFF" cellpadding="3" cellspacing="0">
             <tr>
