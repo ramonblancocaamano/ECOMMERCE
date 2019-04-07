@@ -55,10 +55,12 @@ public class ShoppingCart {
 
     public synchronized double getTotal() {
         double price = 0;
-
+        
         for (ShoppingCartItem index : shoppingCartItems) {
             price += index.getTotal();
         }
+        price = Math.round(price * 100.0) / 100.0;
+        
         return price;
     }
 

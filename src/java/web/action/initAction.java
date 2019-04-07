@@ -15,6 +15,7 @@ public class initAction extends Action {
         this.categoryModel = categoryModel;
     }
 
+    @Override
     public void perform(HttpServletRequest req, HttpServletResponse resp) {
         req.setAttribute("categories", categoryModel.retrieveAll());
         ViewManager.nextView(req, resp, "/view/init.jsp");
