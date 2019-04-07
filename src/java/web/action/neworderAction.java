@@ -46,5 +46,4 @@ public class neworderAction extends Action {
         catogoryId = (String)req.getSession().getAttribute("currentcatid");
         ViewManager.nextView(req, resp, "category.do?categoryid=" + catogoryId);
     }
-
 }

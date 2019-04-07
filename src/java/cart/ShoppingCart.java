@@ -50,7 +50,11 @@ public class ShoppingCart {
     }
 
     public synchronized int getNumberOfItems() {
-        return shoppingCartItems.size();
+        int numberOfItems = 0;
+        for (ShoppingCartItem index : shoppingCartItems) {
+            numberOfItems += index.quantity;
+        }
+        return numberOfItems;
     }
 
     public synchronized double getTotal() {

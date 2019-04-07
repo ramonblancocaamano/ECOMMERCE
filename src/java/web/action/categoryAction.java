@@ -23,6 +23,5 @@ public class categoryAction extends Action {
     public void perform(HttpServletRequest req, HttpServletResponse resp) {
         req.setAttribute("categories", categoryModel.retrieveAll());
         ViewManager.nextView(req, resp, "/view/category.jsp");
-    }
-    
+    }  
 }
