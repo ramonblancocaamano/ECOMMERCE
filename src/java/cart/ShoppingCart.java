@@ -35,6 +35,13 @@ public class ShoppingCart {
         
         shoppingCartItems.add(new ShoppingCartItem(product));
     }
+    
+    public synchronized void removeItem(ShoppingCartItem shoppingCartItem) {
+        shoppingCartItems.remove(shoppingCartItem);
+        if (shoppingCartItems.isEmpty()) {
+            shoppingCartItems = null;
+        }
+    }
 
     public synchronized void update(Product product, String quantity) {
         for (ShoppingCartItem index : shoppingCartItems) {

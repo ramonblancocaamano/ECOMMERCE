@@ -15,6 +15,6 @@ public class clearcartAction extends Action {
     @Override
     public void perform(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         req.getSession().setAttribute("cart", null);
-        ViewManager.nextView(req, resp, "init.do");
+        ViewManager.nextView(req, resp, "/init.do");
     }
 }

@@ -44,6 +44,6 @@ public class neworderAction extends Action {
         shoppingCart.addItem(product);
         
         catogoryId = (String)req.getSession().getAttribute("currentcatid");
-        ViewManager.nextView(req, resp, "category.do?categoryid=" + catogoryId);
+        ViewManager.nextView(req, resp, "/category.do?categoryid=" + catogoryId);
     }
 }
