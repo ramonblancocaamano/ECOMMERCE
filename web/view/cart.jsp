@@ -14,7 +14,7 @@
 
     <%
         int cartNumberOfItems;
-        String totalPrice;
+        String totalPrice = "0.00";
         List<ShoppingCartItem> cartItems;
         ShoppingCart shoppingCart;
 
@@ -28,7 +28,15 @@
     <h2> Your shopping cart contains  <%= cartNumberOfItems%> items.</h2>
     <a href="clearcart.do">Clear cart</a>
     <br><a href="init.do">Continue shopping</a> 
-    <br><a href="checkout.do">Proceed to checkout</a>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="ramonblancocaamano@gmail.com">
+        <input type="hidden" name="item_name" value="Item Name">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="amount" value="<%= totalPrice%>">
+        <input type="image" src="http://www.paypal.com/es_XC/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+    </form>
 
     <table width="80%" border="1" bordercolordark="#000000" bordercolorlight="#FFFFFF" cellpadding="3" cellspacing="0"> 
         <tr >

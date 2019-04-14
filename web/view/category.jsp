@@ -15,6 +15,7 @@
     <body>
         <%
             int cartNumberOfItems = 0;
+            String totalPrice = "0.00";
             List<Category> categories;
             List<Product> products;
             ShoppingCart shoppingCart;
@@ -33,6 +34,7 @@
             shoppingCart = (ShoppingCart) request.getSession().getAttribute("cart");
             if (shoppingCart != null) {
                 cartNumberOfItems = shoppingCart.getNumberOfItems();
+                totalPrice = Double.toString(shoppingCart.getTotal());
             }
         %>
 
@@ -40,7 +42,15 @@
         <img src="img/cart.gif"</img> <%= cartNumberOfItems%> items 
         <%if (cartNumberOfItems > 0) {%>
         <a href="viewcart.do">View Cart</a>
-        <br><a href="checkout.do">Proceed to checkout</a>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="ramonblancocaamano@gmail.com">
+            <input type="hidden" name="item_name" value="Item Name">
+            <input type="hidden" name="currency_code" value="EUR">
+            <input type="hidden" name="amount" value="<%= totalPrice%>">
+            <input type="image" src="http://www.paypal.com/es_XC/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+        </form>
         <%}%>
         <table width="80%" border="1" bordercolordark="#000000" bordercolorlight="#FFFFFF" cellpadding="3" cellspacing="0">
             <tr>
